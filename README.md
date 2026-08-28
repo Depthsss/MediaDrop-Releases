@@ -1,164 +1,27 @@
-# MediaDrop
+# MediaDrop Releases
 
-**MediaDrop** is a small, local desktop downloader built by **Depthsss**.
+MediaDrop'un resmi Windows kurulum dosyaları, güncelleme manifesti ve doğrulama hash'leri bu depoda yayımlanır. Uygulamanın kaynak kodu için [Depthsss/MediaDrop](https://github.com/Depthsss/MediaDrop) deposunu ziyaret edin.
 
-It lets you paste a video link, analyze available formats, choose a quality, and download media from supported platforms with a clean desktop interface.
+## İndir
 
-MediaDrop is built with **Tauri**, **Rust**, and **Vanilla JavaScript**. It runs locally on your computer and uses bundled runtime tools such as `yt-dlp`, `FFmpeg`, `FFprobe`, `aria2c`, and `Deno`.
+[**MediaDrop 1.0.0 kurucusunu indir**](https://github.com/Depthsss/MediaDrop-Releases/releases/latest/download/MediaDrop-Setup-1.0.0.exe)
 
----
+- Windows 10 22H2 ve Windows 11 (x64)
+- Masaüstü uygulaması, yerel tarayıcı köprüsü ve companion eklenti dosyaları dâhildir.
+- Opera, Opera GX, Chrome ve Edge için eklenti kurulum rehberi kurucunun içinde bulunur.
+- Kurulumdan sonra gerekli medya araçları ayrıca Python veya FFmpeg kurulumu istemeden hazır gelir.
 
-## Supported Platforms
+## Güvenlik ve doğrulama
 
-MediaDrop currently supports:
+Windows kurucusu şu anda Authenticode ile imzalı değildir; bu nedenle SmartScreen “Bilinmeyen yayıncı” uyarısı gösterebilir. İndirdiğiniz dosyanın bütünlüğünü aynı release içindeki `SHA256SUMS.txt` ile doğrulayabilirsiniz. Uygulama içi güncellemeler ayrıca Tauri updater imzasıyla doğrulanır.
 
-- YouTube
-- YouTube MP3 / audio extraction
+`latest.json`, MediaDrop'un uygulama içi güncelleyicisi tarafından kullanılır. Bu depoda yalnız güncel sürüm ile desteklenen son önceki sürüm tutulur.
+
+## Desteklenen platformlar
+
+- YouTube ve MP3
 - Instagram
 - X / Twitter
 - TikTok
 
----
-
-## Features
-
-- Paste and analyze video links
-- Select video quality before downloading
-- Automatic best-quality audio download for MP3
-- Download pause, resume, and cancel controls
-- Automatic cleanup of incomplete files after cancellation
-- Custom download folder selection
-- Download history
-- Show downloaded files directly in Windows Explorer
-- Detect renamed downloaded files when possible
-- Automatically remove missing/deleted files from history
-- Platform badges for YouTube, Instagram, X, and TikTok
-- Improved error reports for debugging
-- Clickable error report access from the app UI
-- Automatic `yt-dlp` update checks
-- Bundled runtime tools; no separate Python, FFmpeg, or yt-dlp installation required
-
----
-
-## Downloads
-
-The latest Windows installer is available from the GitHub Releases page:
-
-**MediaDrop Releases:**  
-https://github.com/Depthsss/MediaDrop-Releases/releases
-
-Download the latest `.msi` installer and run it.
-
----
-
-## How It Works
-
-1. Paste a video link.
-2. Click **Analyze**.
-3. Choose the quality or format.
-4. Click **Download**.
-5. Use **Pause**, **Resume**, or **Cancel** if needed.
-6. After completion, use **Show in Folder** to locate the downloaded file.
-
-Downloads are saved to:
-
-```txt
-%USERPROFILE%\Downloads\MediaDrop
-````
-
-You can also choose a custom download folder inside the app.
-
----
-
-## Error Reports
-
-When MediaDrop encounters an error, it automatically creates a detailed error report.
-
-Reports are saved here:
-
-```txt
-%LOCALAPPDATA%\MediaDrop\Hata Raporlari
-```
-
-Error reports include useful debugging information such as:
-
-* MediaDrop version
-* Build mode
-* Windows version
-* System architecture
-* Operation type
-* Platform
-* Format and quality
-* Tool versions
-* Runtime tool paths
-* Storage status
-* Proxy environment status
-* Raw error details
-
-Personal user paths are masked where possible, for example:
-
-```txt
-%LOCALAPPDATA%\MediaDrop\bin\yt-dlp.exe
-```
-
-If something breaks, send the latest `.txt` report from the error report folder.
-
----
-
-## Runtime Tools
-
-MediaDrop uses the following tools internally:
-
-* `yt-dlp`
-* `FFmpeg`
-* `FFprobe`
-* `aria2c`
-* `Deno`
-
-These tools are bundled with the installer and copied to:
-
-```txt
-%LOCALAPPDATA%\MediaDrop\bin
-```
-
-Users do not need to install them manually.
-
----
-
-## Notes
-
-Some platforms may occasionally change their video delivery systems. If a download stops working, it is usually related to platform changes or an outdated extractor.
-
-MediaDrop checks for `yt-dlp` updates automatically to reduce these issues.
-
-Network restrictions, antivirus web shields, VPNs, school networks, dormitory networks, or ISP-level filtering may still affect downloads, especially on YouTube.
-
----
-
-## Privacy
-
-MediaDrop is a local desktop tool.
-
-It does not require an account and does not intentionally collect user data. Downloads, history, runtime tools, and error reports are stored locally on the user's device.
-
----
-
-## Tech Stack
-
-* Tauri
-* Rust
-* Vanilla JavaScript
-* HTML / CSS
-* yt-dlp
-* FFmpeg
-* aria2c
-* Deno
-
----
-
-## Developer
-
-Created by **Depthsss**.
-
-GitHub:
-[https://github.com/Depthsss](https://github.com/Depthsss)
+Sorun bildirirken hassas URL, cookie veya token paylaşmayın. Güvenlik açığı bildirmek için kaynak depodaki [özel security advisory](https://github.com/Depthsss/MediaDrop/security/advisories/new) sayfasını kullanın.
